@@ -1,0 +1,136 @@
+.container {
+    margin: 0 14px;
+}
+
+.form {
+    width: 100%;
+    display: flex;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    border: solid 1px red;
+    background-color: rgb(0, 0, 0);
+    padding: 0 8px;
+    border-radius: 8px;
+    outline: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: bolder;
+    text-transform: capitalize;
+}
+
+.input::placeholder {
+    text-transform: none !important;
+}
+
+.button {
+    background-color: transparent;
+    border: none;
+}
+
+table {
+    border-collapse: separate;
+    border-spacing: 0 14px;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    table-layout: fixed;
+    color: aliceblue;
+}
+
+.buttonCoin {
+    color: aliceblue
+}
+
+table caption {
+    font-size: 16px;
+    margin: 0.5em 0 .75em;
+}
+
+.tr {
+    background-color: #373738;
+}
+
+td:first-child,
+th:first-child {
+    border-radius: 4px 0 0 4px;
+}
+
+td:last-child,
+th:last-child {
+    border-radius: 0 4px 4px 0;
+}
+
+table th,
+table td {
+    padding: 14px;
+    text-align: center;
+}
+
+.tdLabel {
+    font-size: 16px;
+    font-weight: bold;
+    color: aliceblue;
+}
+
+.tdProfit {
+    color: rgb(60, 160, 60);
+    font-weight: bolder;
+}
+
+.tdLoss {
+    color: rgb(223, 59, 59);
+    font-weight: bolder;
+}
+
+
+/*reponsive*/
+
+@media screen and (max-width: 740px) {
+    table {
+        border: 0;
+    }
+    table thead {
+        border: solid red 2px;
+        clip: rect(0 0 0 0);
+        height: 1px;
+        margin: -1px;
+        overflow: hidden;
+        position: absolute;
+        width: 1px;
+        padding: 0;
+    }
+    .tr {
+        border-bottom: 2px solid red;
+        display: block;
+        margin-bottom: 14px;
+    }
+    table td {
+        border-bottom: 1px solid rgb(107, 106, 106);
+        display: block;
+        text-align: right;
+        font-size: 14px;
+    }
+    table td::before {
+        display: flex;
+        justify-content: start;
+        align-items: center;
+        content: attr(data-label);
+        float: left;
+        font-weight: bold;
+        text-transform: uppercase;
+        width: 120px;
+        padding-right: 14px;
+        font-size: 13px;
+    }
+    table td:first-child {
+        border-radius: 0;
+    }
+    table td:last-child {
+        border-bottom: none;
+    }
+}

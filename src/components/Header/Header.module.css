@@ -1,0 +1,19 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 110px;
+    width: 100%;
+}
+
+.buttonHome {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-bottom: 2px solid #f10a0a;
+}
+
+.logo {
+    width: 360px;
+}
