@@ -32,6 +32,18 @@
     border: none;
 }
 
+.sectionMessage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 4px;
+}
+
+.text {
+    color: yellow;
+    font-size: 12px;
+}
+
 table {
     border-collapse: separate;
     border-spacing: 0 14px;
@@ -40,6 +52,23 @@ table {
     width: 100%;
     table-layout: fixed;
     color: aliceblue;
+}
+
+.name {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.logoCoin {
+    width: 20px;
+    height: 20px;
+    transition: all 1s;
+}
+
+.logoCoin:hover {
+    transform: scale(1.5);
+    z-index: 99;
 }
 
 .buttonCoin {
@@ -95,8 +124,9 @@ table td {
     height: 30px;
     font-size: 15px;
     font-weight: bolder;
-    border-radius: 8px;
+    border-radius: 6px;
     transition: 0.8s background-color;
+    margin: 10px 0;
 }
 
 .buttonMore:hover {
@@ -148,5 +178,8 @@ table td {
     }
     table td:last-child {
         border-bottom: none;
+    }
+    .name .logoCoin {
+        margin-left: -15px;
     }
 }
