@@ -1,20 +1,125 @@
-import { Link }          from 'react-router-dom';
-import styles            from './HomeApp.module.css'
-import { RiSearch2Line } from "react-icons/ri";
+import { Link, useNavigate }              from 'react-router-dom';
+import styles                             from './styles/HomeApp.module.css' 
+import { RiSearch2Line }                  from "react-icons/ri";
+import { FormEvent, useEffect, useState } from 'react';
+
+interface CoinPorps{
+
+    id              : string,
+    name            : string,
+    rank            : string,
+    suply           : string,
+    symbol          : string,
+    priceUsd        : string,
+    vwap24Hr        : string,
+    explorer        : string
+    maxSuply        : string,
+    marketCapUsd    : string,
+    volumeUsd24Hr   : string
+    changePercent24h: string,
+}
+
+interface DataProp{
+    data: CoinPorps[]
+}
 
 export const HomeApp: React.FC = ()=>{
+
+    const [input, setInput] = useState<string>("")
+    //const [coins, setCoins] = useState<CoinPorps[]>([])
+
+    const navigate = useNavigate()
+
+    useEffect(
+
+        ()=>{
+
+            getData()
+
+        }, []
+    )
+
+    const getData = async() =>{
+
+        fetch('https://api.coincap.io/v2/assets?limit=10&offset=0')
+        .then(response => response.json())
+        .then(
+            (data:DataProp)=>{
+                
+                const coinsData = data.data;
+
+                console.log(coinsData)
+
+                const price = Intl.NumberFormat(
+                    "en-US",
+                    {
+
+                        style: "currency",
+                        currency: "USD",
+                        minimumFractionDigits: 2
+                    }
+                )
+
+                const formatedResult = coinsData.map(
+
+                    (item)=>{
+
+                        const formated = {
+
+                            ...item,
+                            formatedPrice : price.format(Number(item.priceUsd))
+                        }
+
+                        return formated
+
+                    }
+                )
+
+                console.log(formatedResult)
+
+            }
+        )
+
+    }
+
+    const handleSubmit = (event: FormEvent)=>{
+
+        event.preventDefault()
+
+        console.log(`Moeda ${input}$`)
+
+        if(input === ''){
+
+            alert("Campo obrigatório")
+            return
+
+        }else{
+            navigate (`/detail/${input}`)
+        }
+
+    }
+
+    
+
+    const handleGetMore = ()=>{
+
+
+       
+    }
 
     return(
 
         <main className={styles.container}>
 
 
-            <form className={styles.form}>
+            <form className={styles.form} onSubmit={handleSubmit}>
 
                 <input 
                     type="text"
                     placeholder='Aqui você digita o nome da moeda... '
                     className={styles.input}
+                    value={input}
+                    onChange={(e)=> setInput(e.target.value)}
                 />
 
                 <button type='submit' className={styles.button}>
@@ -81,6 +186,8 @@ export const HomeApp: React.FC = ()=>{
                 </tbody>
 
             </table>
+
+            <button className={styles.buttonMore} onClick={handleGetMore}>More coin</button>
 
         </main>
 

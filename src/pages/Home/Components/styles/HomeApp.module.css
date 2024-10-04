@@ -87,6 +87,22 @@ table td {
     font-weight: bolder;
 }
 
+.buttonMore {
+    background-color: red;
+    outline: none;
+    border: none;
+    width: 120px;
+    height: 30px;
+    font-size: 15px;
+    font-weight: bolder;
+    border-radius: 8px;
+    transition: 0.8s background-color;
+}
+
+.buttonMore:hover {
+    background-color: rgb(105, 8, 8);
+}
+
 
 /*reponsive*/
 
