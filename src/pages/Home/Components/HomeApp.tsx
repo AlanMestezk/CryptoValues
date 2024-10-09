@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import { Link, useNavigate, /*useNavigate*/ }              from 'react-router-dom';
-import styles                             from './styles/HomeApp.module.css';
-import { RiSearch2Line }                  from "react-icons/ri";
 import { FormEvent, useEffect, useState } from 'react';
+import { Link, useNavigate}               from 'react-router-dom';
+import { RiSearch2Line }                  from "react-icons/ri";
+import styles                             from './styles/HomeApp.module.css';
 
-interface CoinPorps{
+export interface CoinPorps{
     id               : string,
     name             : string,
     rank             : string,

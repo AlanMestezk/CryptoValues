@@ -1,3 +1,4 @@
+import { DetailApp } from "./Components/DetailsApp"
 
 
 export const Details: React.FC = ()=>{
@@ -7,11 +8,7 @@ export const Details: React.FC = ()=>{
 
     return(
 
-        <div>
-
-            <h1>Detail Crypto </h1>
-
-        </div>
+        <DetailApp/>
 
     )
 }
