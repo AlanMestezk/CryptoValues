@@ -1,0 +1,38 @@
+.container {
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 22px;
+    border-radius: 50px;
+}
+
+.sectionTitle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.sectionContent {
+    background-color: black;
+    border-radius: 30px;
+    margin-top: 30px;
+    padding: 12px;
+}
+
+.divTitle {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.divTitle h1 {
+    font-size: 24px;
+    color: aliceblue;
+}
+
+.divTitle img {
+    width: 50px;
+    height: 50px;
+}
