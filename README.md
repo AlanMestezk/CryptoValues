@@ -1,50 +1,22 @@
-# React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Logo](https://github.com/user-attachments/assets/42323447-128c-4050-aa3a-d216598ebc57) 
+# Crypto Values
 
-Currently, two official plugins are available:
+Crypto Values é uma aplicação que exibe em tempo real informações sobre as criptomoedas mais importantes do mundo, como preço, variação em 24 horas, valor de mercado, volume, entre outros dados relevantes.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Esta aplicação consome a API de criptomoedas disponibilizada pelo CoinCap, que pode ser acessada através do link: [CoinCap API](https://api.coincap.io/v2/assets).
 
-## Expanding the ESLint configuration
+## Tecnologias Utilizadas
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+- **React** com **Vite** e **TypeScript** para garantir máxima performance e uma experiência de desenvolvimento otimizada.
+- **CSS Modules** para encapsulamento e modularização dos estilos, garantindo isolamento e organização do código CSS.
 
-- Configure the top-level `parserOptions` property like this:
+## Instalação e Execução
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+Siga os passos abaixo para rodar o projeto localmente:
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
-
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
-
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+* Instale as dependências e rode em desenvolvimento:
+   ```bash
+   npm install
+   npm run dev
+### Link de acesso a aplicação: https://crypto-values-app.vercel.app
